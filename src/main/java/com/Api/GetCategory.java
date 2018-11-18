@@ -11,8 +11,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class GetCategory extends HttpServlet {
-    protected JSONObject resData = new JSONObject();
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
@@ -24,17 +22,13 @@ public class GetCategory extends HttpServlet {
             while (rs.next()) {
                 int c_id = rs.getInt("c_id");
                 String c_name = rs.getString("c_name");
-                System.out.println(c_name);
                 JSONObject category = new JSONObject();
                 category.put("id", c_id);
                 category.put("name", c_name);
                 categoryArr.add(category);
             }
-            resData.put("status", new Integer(1));
-            resData.put("message", "获取成功");
-            resData.put("data", categoryArr);
             PrintWriter out = response.getWriter();
-            out.println(resData);
+            out.println(ResJson.generateResJson(1, "请求成功", categoryArr));
         } catch (Exception e) {
             e.printStackTrace();
         }
