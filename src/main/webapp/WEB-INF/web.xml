@@ -3,6 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>com.MyFilter.CorsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/api/*</url-pattern>
+    </filter-mapping>
 
     <servlet>
         <servlet-name>GetCategory</servlet-name>
@@ -11,6 +20,15 @@
     <servlet-mapping>
         <servlet-name>GetCategory</servlet-name>
         <url-pattern>/api/getCategory</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>com.Api.Register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/api/register</url-pattern>
     </servlet-mapping>
 
 </web-app>
