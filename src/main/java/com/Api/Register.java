@@ -23,7 +23,7 @@ public class Register extends HttpServlet {
         if (MysqlUtil.excutUpdate(conn, sql, params) > 0) {
             resJson = ResJson.generateResJson(1, "请求成功", "注册成功");
         } else {
-            resJson = ResJson.generateResJson(2, "请求失败", "注册失败");
+            resJson = ResJson.generateResJson(2, "请求失败", "该用户已存在");
         }
         response.getWriter().println(resJson);
     }

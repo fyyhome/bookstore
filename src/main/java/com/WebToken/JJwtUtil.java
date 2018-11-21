@@ -4,19 +4,18 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Date;
 
 public class JJwtUtil {
 
-    protected static final String JJWT_KEY = "javaweb_bookstore_be";
+    protected static final String JJWT_KEY = "javaweb_bookstore_be_token_key_hs256";
     protected static final long JJWT_TTL = 60 * 60 * 1000; // ms
 
     public static SecretKey generalKey() {
         byte[] encodeKey = JJWT_KEY.getBytes();
-        SecretKey Key = new SecretKeySpec(encodeKey, 0, encodeKey.length, "AES");
+        SecretKey Key = new SecretKeySpec(encodeKey, 0, encodeKey.length, "HmacSHA256");
         return Key;
     }
 
