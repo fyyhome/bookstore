@@ -38,4 +38,20 @@
         <servlet-name>getSpecialKind</servlet-name>
         <url-pattern>/api/getSpecialKind</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>addToShopCar</servlet-name>
+        <servlet-class>com.Api.AddToShopCar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addToShopCar</servlet-name>
+        <url-pattern>/api/addToShopCar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>viewShopCar</servlet-name>
+        <servlet-class>com.Api.ViewShopCar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>viewShopCar</servlet-name>
+        <url-pattern>/api/viewShopCar</url-pattern>
+    </servlet-mapping>
 </web-app>
