@@ -54,4 +54,28 @@
         <servlet-name>viewShopCar</servlet-name>
         <url-pattern>/api/viewShopCar</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>updateGoodsNum</servlet-name>
+        <servlet-class>com.Api.UpdateGoodsNum</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateGoodsNum</servlet-name>
+        <url-pattern>/api/updateGoodsNum</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>goodsNumPlus</servlet-name>
+        <servlet-class>com.Api.GoodsNumPlus</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>goodsNumPlus</servlet-name>
+        <url-pattern>/api/goodsNumPlus</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>goodsNumSub</servlet-name>
+        <servlet-class>com.Api.GoodsNumSub</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>goodsNumSub</servlet-name>
+        <url-pattern>/api/goodsNumSub</url-pattern>
+    </servlet-mapping>
 </web-app>
