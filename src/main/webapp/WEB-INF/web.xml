@@ -40,4 +40,22 @@
         <url-pattern>/api/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SearchUser</servlet-name>
+        <servlet-class>com.Api.SearchUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchUser</servlet-name>
+        <url-pattern>/api/searchUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateOrder</servlet-name>
+        <servlet-class>com.Api.UpdateOrderStatus</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateOrder</servlet-name>
+        <url-pattern>/api/updateOrder</url-pattern>
+    </servlet-mapping>
+
 </web-app>
