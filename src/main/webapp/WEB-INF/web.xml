@@ -36,6 +36,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getSpecialKind</servlet-name>
-        <url-pattern>/1</url-pattern>
+        <url-pattern>/api/getSpecialKind</url-pattern>
     </servlet-mapping>
 </web-app>
