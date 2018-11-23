@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+
+// 获取书籍类别
 public class GetCategory extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String sql = "select * from category";

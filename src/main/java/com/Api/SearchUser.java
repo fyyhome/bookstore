@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+// 后台用户信息查询
 @WebServlet(name = "SearchUser")
 public class SearchUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +25,7 @@ public class SearchUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String token = request.getHeader("Authorization");
         if (token == null || token.equals("")) {
-            response.getWriter().println(ResJson.generateResJson(2, "未登录", "未登录"));
+            response.getWriter().println(ResJson.generateResJson(4, "未登录", "未登录"));
         } else {
             Connection conn = MysqlUtil.getConnection();
             if (VerifyToken.myVerify(token)) {
@@ -54,13 +55,14 @@ public class SearchUser extends HttpServlet {
                        }
                        response.getWriter().println(ResJson.generateResJson(1, "请求成功", userArr));
                    } else {
-                       response.getWriter().println(ResJson.generateResJson(3, "没有管理员权限", "无"));
+                       response.getWriter().println(ResJson.generateResJson(5, "没有管理员权限", "无"));
                    }
+                   MysqlUtil.closeAll(conn, null, rs);
                } catch (Exception e) {
                    e.printStackTrace();
                }
             } else {
-                response.getWriter().println(ResJson.generateResJson(4, "无效token", "无"));
+                response.getWriter().println(ResJson.generateResJson(3, "无效token", "无"));
             }
         }
     }

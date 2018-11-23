@@ -12,11 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
-// 后台修改订单状态
-@WebServlet(name = "UpdateOrderStatus")
-public class UpdateOrderStatus extends HttpServlet {
+@WebServlet(name = "AddBookToSql")
+public class AddBookToSql extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String token = request.getHeader("Authorization");
         if (token == null || token.equals("")) {
@@ -32,13 +30,14 @@ public class UpdateOrderStatus extends HttpServlet {
                         user_type = rs.getInt( "user_type");
                     }
                     if (user_type == 1) {
-                        String[] param = new String[1];
-                        parse(ResJson.getRequestBody(request.getInputStream()), param);
-                        String sql = "update orders set is_finsh = " + 1 + "where order_id = " + param[0];
-                        if(MysqlUtil.excutUpdate(conn, sql, null) > 0) {
-                            response.getWriter().println(ResJson.generateResJson(1, "修改成功", "无"));
+                        String[] param = new String[7];
+                        int c_id = parse(ResJson.getRequestBody(request.getInputStream()), param);
+                        String sql = "insert into books(book_name,book_author,book_price,book_publishing,c_id,book_smimg,book_mdimg,book_describe)" +
+                                " values(?,?,?,?," + c_id + ",?,?,?)";
+                        if (MysqlUtil.excutUpdate(conn, sql, param) > 0) {
+                            response.getWriter().println(ResJson.generateResJson(1, "添加成功", "无"));
                         } else {
-                            response.getWriter().println(ResJson.generateResJson(2, "修改出了点意外", "无"));
+                            response.getWriter().println(ResJson.generateResJson(2, "添加出了点意外", "无"));
                         }
                     } else {
                         response.getWriter().println(ResJson.generateResJson(5, "没有管理员权限", "无"));
@@ -53,11 +52,18 @@ public class UpdateOrderStatus extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // doPost(request,response);
+
     }
 
-    private void parse(String data, String[] param) {
+    private int parse(String data, String[] params) {
         JSONObject json = new JSONObject(data);
-        param[0] = json.getString("order_id");
+        params[0] = json.getString("book_name");
+        params[1] = json.getString("book_author");
+        params[2] = json.getString("book_price");
+        params[3] = json.getString("book_publishing");
+        params[4] = json.getString("book_smimg");
+        params[5] = json.getString("book_mdimg");
+        params[6] = json.getString("book_describe");
+        return json.getInt("c_id");
     }
 }

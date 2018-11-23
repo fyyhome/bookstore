@@ -58,4 +58,48 @@
         <url-pattern>/api/updateOrder</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddBookWithToken</servlet-name>
+        <servlet-class>com.Api.AddBookWithToken</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddBookWithToken</servlet-name>
+        <url-pattern>/api/addBookWithToken</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetShopCarWithToken</servlet-name>
+        <servlet-class>com.Api.GetShopCarWithToken</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetShopCarWithToken</servlet-name>
+        <url-pattern>/api/getShopCarWithToken</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubmitOrder</servlet-name>
+        <servlet-class>com.Api.SubmitOrder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubmitOrder</servlet-name>
+        <url-pattern>/api/submitOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddBookToSql</servlet-name>
+        <servlet-class>com.Api.AddBookToSql</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddBookToSql</servlet-name>
+        <url-pattern>/api/addBookToSql</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetUserOrders</servlet-name>
+        <servlet-class>com.Api.GetUserOrders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUserOrders</servlet-name>
+        <url-pattern>/api/getUserOrders</url-pattern>
+    </servlet-mapping>
 </web-app>

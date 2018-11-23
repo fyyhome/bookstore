@@ -43,6 +43,7 @@ public class Login extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        MysqlUtil.closeAll(conn,null,rs);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
