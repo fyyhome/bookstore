@@ -78,4 +78,45 @@
         <servlet-name>goodsNumSub</servlet-name>
         <url-pattern>/api/goodsNumSub</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>submitOrders</servlet-name>
+        <servlet-class>com.Api.SubmitOrders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>submitOrders</servlet-name>
+        <url-pattern>/api/submitOrders</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getSelfOrders</servlet-name>
+        <servlet-class>com.Api.GetSelfOrders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getSelfOrders</servlet-name>
+        <url-pattern>/api/getSelfOrders</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>viewAllOrders</servlet-name>
+        <servlet-class>com.Api.ViewAllOrders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>viewAllOrders</servlet-name>
+        <url-pattern>/api/viewAllOrders</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getBookInformation</servlet-name>
+        <servlet-class>com.Api.GetBookInformation</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getBookInformation</servlet-name>
+        <url-pattern>/api/getBookInformation</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>t</servlet-name>
+        <servlet-class>com.Api.test</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>t</servlet-name>
+        <url-pattern>/1</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

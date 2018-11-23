@@ -25,9 +25,12 @@ public class AddToShopCar extends HttpServlet {
                 bookArr=new ArrayList<JSONObject>();
             }
             String sbook_id=request.getParameter("book_id");
-            //String sbook_id="100000158";
-            //int book_id=100000158;
-           int book_id=Integer.parseInt(sbook_id);
+           /* String sbook_id="100000158";
+            int book_id=100000158;
+            int book_id1=100000611;
+            int book_id2=100000810;
+            int book_id3=100101360;*/
+            int book_id=Integer.parseInt(sbook_id);
             int flag=1;
             for(int i=0;i<bookArr.size();i++)
             {
@@ -51,6 +54,18 @@ public class AddToShopCar extends HttpServlet {
                 book.put("book_id",book_id);
                 book.put("book_num",1);
                 bookArr.add(book);
+              /*  JSONObject book1=new JSONObject();
+                book1.put("book_id",book_id1);
+                book1.put("book_num",1);
+                bookArr.add(book1);
+                JSONObject book2=new JSONObject();
+                book2.put("book_id",book_id2);
+                book2.put("book_num",1);
+                bookArr.add(book2);
+                JSONObject book3=new JSONObject();
+                book3.put("book_id",book_id3);
+                book3.put("book_num",1);
+                bookArr.add(book3);*/
             }
             session.setAttribute("bookArr",bookArr);
         }
