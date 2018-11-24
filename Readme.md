@@ -56,7 +56,7 @@ res:
 >>          {"user_id":"","user_name":9,"user_type": 0/1},  
 >  ],  
 >   "message":"请求成功",  
->   "status":1    
+>   "status":1(成功)/2(用户不存在)    
   
 }  
 **post: /api/updateOrder**  

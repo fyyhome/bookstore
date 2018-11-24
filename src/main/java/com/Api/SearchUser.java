@@ -53,7 +53,11 @@ public class SearchUser extends HttpServlet {
                            user.put("user_type", rs.getString("user_type"));
                            userArr.add(user);
                        }
-                       response.getWriter().println(ResJson.generateResJson(1, "请求成功", userArr));
+                       if (userArr.size() == 0) {
+                           response.getWriter().println(ResJson.generateResJson(2, "该用户不存在", "无"));
+                       } else {
+                           response.getWriter().println(ResJson.generateResJson(1, "请求成功", userArr));
+                       }
                    } else {
                        response.getWriter().println(ResJson.generateResJson(5, "没有管理员权限", "无"));
                    }
