@@ -21,9 +21,9 @@ public class Login extends HttpServlet {
         String[] params = new String[2];
         parse(ResJson.getRequestBody(request.getInputStream()), params);
         String sql = "select * from user where user_name = '" + params[0] + "'";
-        Connection conn = MysqlUtil.getConnection();
-        ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
         try {
+            Connection conn = MysqlUtil.getConnection();
+            ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
             String password = "";
             String user_id = "";
             while (rs.next()) {
@@ -40,10 +40,10 @@ public class Login extends HttpServlet {
             } else {
                 response.getWriter().println(ResJson.generateResJson(3, "登录失败", "密码错误"));
             }
+            MysqlUtil.closeAll(conn,null,rs);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        MysqlUtil.closeAll(conn,null,rs);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

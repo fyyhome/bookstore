@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 @WebServlet(name = "Register")
 public class Register extends HttpServlet {
@@ -20,13 +21,18 @@ public class Register extends HttpServlet {
         String[] params = new String[2];
         parse(ResJson.getRequestBody(request.getInputStream()), params);
         String sql = "insert into user(user_name, user_password) values(?,?)";
-        Connection conn = MysqlUtil.getConnection();
-        if (MysqlUtil.excutUpdate(conn, sql, params) > 0) {
-            resJson = ResJson.generateResJson(1, "请求成功", "注册成功");
-        } else {
-            resJson = ResJson.generateResJson(2, "请求失败", "该用户已存在");
+        Connection conn = null;
+        try {
+            conn = MysqlUtil.getConnection();
+            if (MysqlUtil.excutUpdate(conn, sql, params) > 0) {
+                resJson = ResJson.generateResJson(1, "请求成功", "注册成功");
+            } else {
+                resJson = ResJson.generateResJson(2, "请求失败", "该用户已存在");
+            }
+            response.getWriter().println(resJson);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        response.getWriter().println(resJson);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

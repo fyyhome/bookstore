@@ -30,7 +30,6 @@ public class SubmitOrder extends HttpServlet {
                 JSONArray jsonArr = new JSONArray(ResJson.getRequestBody(request.getInputStream()));
                 int[] params = new int[4];
                 params[2] = Integer.parseInt(user_id);
-                Connection conn = MysqlUtil.getConnection();
                 for (int i = 0; i < jsonArr.length(); i++) {
                     JSONObject json = jsonArr.getJSONObject(i);
                     params[0] = getOrderId();
@@ -38,6 +37,7 @@ public class SubmitOrder extends HttpServlet {
                     params[3] = json.getInt("book_count");
                     String sql = "insert into orders(order_id,book_id,user_id,book_count) values(?,?,?,?)";
                     try {
+                        Connection conn = MysqlUtil.getConnection();
                         PreparedStatement pstmt = conn.prepareStatement(sql);
                         for (int j = 0; j < params.length; i++) {
                             pstmt.setInt(i+1, params[i]);
@@ -47,7 +47,7 @@ public class SubmitOrder extends HttpServlet {
                         } else {
                             response.getWriter().println(ResJson.generateResJson(2, "提交出了点意外", "无"));
                         }
-                    } catch (SQLException e) {
+                    } catch (Exception e) {
                         response.getWriter().println(ResJson.generateResJson(2, "提交出了点意外", "无"));
                         e.printStackTrace();
                     }
@@ -64,10 +64,10 @@ public class SubmitOrder extends HttpServlet {
 
     private int getOrderId() {
         int order_id = 0;
-        Connection conn = MysqlUtil.getConnection();
         String sql = "select MAX(order_id) from orders";
-        ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
         try {
+            Connection conn = MysqlUtil.getConnection();
+            ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
             while (rs.next()) {
                 order_id = rs.getInt("order_id");
             }

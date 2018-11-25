@@ -1,9 +1,6 @@
 package com.MySql;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class MysqlUtil {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -12,14 +9,10 @@ public class MysqlUtil {
     static final String PASS = "123Fuyingyou";
 
     // 获取连接
-    public static Connection getConnection() {
+    public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Connection conn = null;
-        try {
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Class.forName(JDBC_DRIVER);
+        conn = DriverManager.getConnection(DB_URL,USER,PASS);
         return conn;
     }
 
@@ -41,20 +34,16 @@ public class MysqlUtil {
     }
 
     // 查询
-    public static ResultSet excutQuery(Connection conn, String sql, String[] param) {
+    public static ResultSet excutQuery(Connection conn, String sql, String[] param) throws SQLException {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        try {
-            pstmt = conn.prepareStatement(sql);
-            if (param != null) {
-                for (int i = 0; i < param.length; i++) {
-                    pstmt.setString(i+1, param[i]);
-                }
+        pstmt = conn.prepareStatement(sql);
+        if (param != null) {
+            for (int i = 0; i < param.length; i++) {
+                pstmt.setString(i+1, param[i]);
             }
-            rs = pstmt.executeQuery();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+        rs = pstmt.executeQuery();
         return rs;
     }
 

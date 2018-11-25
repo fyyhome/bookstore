@@ -26,10 +26,10 @@ public class AddBookWithToken extends HttpServlet {
             if (VerifyToken.myVerify(token)) {
                 String user_id = VerifyToken.parseUserId(token);
                 JSONObject json = new JSONObject(ResJson.getRequestBody(request.getInputStream()));
-                Connection conn = MysqlUtil.getConnection();
                 String sql = "select * from shop_car where user_id = " + user_id + " and book_id = " + json.getInt("book_id");
-                ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
                 try {
+                    Connection conn = MysqlUtil.getConnection();
+                    ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
                     if (rs.next()) {
                         int count = rs.getInt("book_count");
                         count += json.getInt("book_count");
@@ -51,7 +51,7 @@ public class AddBookWithToken extends HttpServlet {
                             response.getWriter().println(ResJson.generateResJson(2, "添加失败", "未知意外"));
                         }
                     }
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else {

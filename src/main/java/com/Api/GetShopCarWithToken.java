@@ -31,9 +31,9 @@ public class GetShopCarWithToken extends HttpServlet {
                 String user_id = VerifyToken.parseUserId(token);
                 String querySql = "select * from shop_car where user_id = " + user_id;
                 ArrayList<JSONObject> dataArr = new ArrayList<>();
-                Connection conn = MysqlUtil.getConnection();
-                ResultSet rs = MysqlUtil.excutQuery(conn, querySql, null);
                 try {
+                    Connection conn = MysqlUtil.getConnection();
+                    ResultSet rs = MysqlUtil.excutQuery(conn, querySql, null);
                     while (rs.next()) {
                         JSONObject data = new JSONObject();
                         data.put("book_count", rs.getInt("book_count"));
@@ -50,11 +50,11 @@ public class GetShopCarWithToken extends HttpServlet {
                         dataArr.add(data);
                     }
                     response.getWriter().println(ResJson.generateResJson(1, "获取成功", dataArr));
+                    MysqlUtil.closeAll(conn,null,rs);
                 } catch (Exception e) {
                     e.printStackTrace();
                     response.getWriter().println(ResJson.generateResJson(2, "获取失败", "出了点意外"));
                 }
-                MysqlUtil.closeAll(conn,null,rs);
             } else {
                 response.getWriter().println(ResJson.generateResJson(3, "无效token", "无"));
             }

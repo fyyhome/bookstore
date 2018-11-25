@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class GetCategory extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String sql = "select * from category";
-        Connection conn = MysqlUtil.getConnection();
-        ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
         try {
+            Connection conn = MysqlUtil.getConnection();
+            ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
             ArrayList<JSONObject> categoryArr = new ArrayList<>();
             while (rs.next()) {
                 int c_id = rs.getInt("c_id");

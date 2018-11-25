@@ -20,12 +20,13 @@ public class AddBookToSql extends HttpServlet {
         if (token == null || token.equals("")) {
             response.getWriter().println(ResJson.generateResJson(4, "未登录", "未登录"));
         } else {
-            Connection conn = MysqlUtil.getConnection();
+
             if (VerifyToken.myVerify(token)) {
                 String mysql = "select * from user where user_id = " + VerifyToken.parseUserId(token);
-                ResultSet rs = MysqlUtil.excutQuery(conn, mysql, null);
                 int user_type = -1;
                 try {
+                    Connection conn = MysqlUtil.getConnection();
+                    ResultSet rs = MysqlUtil.excutQuery(conn, mysql, null);
                     while (rs.next()) {
                         user_type = rs.getInt( "user_type");
                     }

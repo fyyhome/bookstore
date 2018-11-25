@@ -29,9 +29,9 @@ public class GetUserOrders extends HttpServlet {
             if (VerifyToken.myVerify(token)) {
                 String user_id = VerifyToken.parseUserId(token);
                 String sql = "select * from orders where user_id = " + user_id;
-                Connection conn = MysqlUtil.getConnection();
-                ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
                 try {
+                    Connection conn = MysqlUtil.getConnection();
+                    ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
                     ArrayList<JSONObject> dataArr = new ArrayList<>();
                     JSONObject order = new JSONObject();
                     float total_price = 0;
@@ -67,11 +67,11 @@ public class GetUserOrders extends HttpServlet {
                         order.put("total_price", total_price);
                     }
                     response.getWriter().println(ResJson.generateResJson(1, "请求成功", dataArr));
+                    MysqlUtil.closeAll(conn,null,rs);
                 } catch (Exception e) {
                     e.printStackTrace();
                     response.getWriter().println(ResJson.generateResJson(2, "发生了点意外", "无"));
                 }
-                MysqlUtil.closeAll(conn,null,rs);
             } else {
                 response.getWriter().println(ResJson.generateResJson(3, "无效token", "无"));
             }
