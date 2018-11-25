@@ -14,12 +14,20 @@ public class ResJson {
         @param message: 状态吗相关信息
         @param data: 数据
      */
-    public static JSONObject generateResJson(int status, String message, Object data) {
+//    public static JSONObject generateResJson(int status, String message, Object data) {
+//        JSONObject json = new JSONObject();
+//        json.put("status", new Integer(status));
+//        json.put("message", message);
+//        json.put("data", data);
+//        return json;
+//    }
+
+    public static String generateResJson(int status, String message, Object data) {
         JSONObject json = new JSONObject();
         json.put("status", new Integer(status));
         json.put("message", message);
         json.put("data", data);
-        return json;
+        return json.toString();
     }
 
     public static String getRequestBody(ServletInputStream sp) throws IOException {

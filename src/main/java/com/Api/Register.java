@@ -13,7 +13,8 @@ import java.sql.Connection;
 
 @WebServlet(name = "Register")
 public class Register extends HttpServlet {
-    JSONObject resJson;
+    // JSONObject resJson;
+    String resJson;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String[] params = new String[2];
