@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.MySql.MysqlUtil;
 import org.json.JSONObject;
+
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -31,6 +33,11 @@ public class GetCategory extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println(ResJson.generateResJson(1, "请求成功", categoryArr));
         } catch (Exception e) {
+            try {
+                response.getWriter().println(ResJson.generateResJson(2, "数据库操作失败", "无"));
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             e.printStackTrace();
         }
     }
