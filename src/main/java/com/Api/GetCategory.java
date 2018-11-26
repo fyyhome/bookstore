@@ -34,7 +34,7 @@ public class GetCategory extends HttpServlet {
             out.println(ResJson.generateResJson(1, "请求成功", categoryArr));
         } catch (Exception e) {
             try {
-                response.getWriter().println(ResJson.generateResJson(2, "数据库操作失败", e.getMessage()));
+                response.getWriter().println(ResJson.generateResJson(2, e.toString(), e.getMessage()));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
