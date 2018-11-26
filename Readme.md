@@ -2,7 +2,7 @@
 
 <h4>已登录的请求头验证： "Authorization": "token"</h4>
 
-**post: /api/register**  
+**注册 post: /api/register**  
 req:  
 {  
 >   user_num: '',  
@@ -17,7 +17,7 @@ res:
   
 }  
   
-**post: /api/login**  
+**登录 post: /api/login**  
 req:  
 {  
 >    user_num: '',  
@@ -34,7 +34,7 @@ res:
 
 }  
   
-**get: /api/getCategory**  
+**获取书籍分类 get: /api/getCategory**  
 req: null  
 res:   
 {  
@@ -48,7 +48,7 @@ res:
 
 }  
 
-**get: /api/searchUser?user_name="xxx"  
+**查询用户信息 get: /api/searchUser?user_name="xxx"  
 /api/searchUser返回全部用户**  
 res:   
 {  
@@ -59,7 +59,7 @@ res:
 >   "status":1(成功)/2(用户不存在)    
   
 }  
-**post: /api/updateOrder**  
+**修改订单状态 post: /api/updateOrder**  
 req:  
 {  
 > "order_id": 001  
@@ -68,7 +68,7 @@ req:
 res:  
 同上post，成功或失败
 
-**post: /api/addBookWithToken**  
+**登录用户添加购物车 post: /api/addBookWithToken**  
 req:  
 {  
 >   "book_id": 001,  
@@ -78,7 +78,7 @@ req:
 res:  
 同上post，成功或失败  
 
-**get:  /api/getShopCarWithToken**  
+**登录用户查看购物车 get:  /api/getShopCarWithToken**  
 res:  
 {  
 >   "data":[  
@@ -98,7 +98,7 @@ res:
   
 }
 
-**post:  /api/submitOrder**  
+**提交订单 post:  /api/submitOrder**  
 req:  
 [  
 > {  
@@ -115,7 +115,7 @@ req:
 res:  
 同上post，成功或失败  
 
-**post:  /api/addBookToSql**  
+**管理员添加书籍信息 post:  /api/addBookToSql**  
 req:  
 {  
 > "book_name": "xxx",  
@@ -129,7 +129,7 @@ req:
   
 }  
 
-**get:  /api/getUserOrders**  
+**登录用户查看自己订单 get:  /api/getUserOrders**  
 res:  
 {  
 >   "status": 0,  
