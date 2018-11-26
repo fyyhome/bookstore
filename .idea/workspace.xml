@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Gradle : com.bookstore : bookstore_be-1.0-SNAPSHOT.war (exploded)" />
+      <artifact name="Gradle : com.bookstore : bookstore_be-1.0-SNAPSHOT.war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -44,7 +44,7 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="gradle" value="4" />
-          <entry key="java" value="167" />
+          <entry key="java" value="168" />
           <entry key="jsp" value="1" />
           <entry key="md" value="8" />
           <entry key="properties" value="1" />
@@ -54,7 +54,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="4" />
-          <entry key="JAVA" value="167" />
+          <entry key="JAVA" value="168" />
           <entry key="JSP" value="1" />
           <entry key="Markdown" value="8" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -87,20 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
+            <state relative-caret-position="526">
               <caret line="102" column="38" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Api/ResJson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -108,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Api/GetCategory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+            <state relative-caret-position="176">
+              <caret line="23" column="66" lean-forward="true" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -623,7 +611,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProvinceWeb" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -737,18 +725,18 @@
       <workItem from="1543059917118" duration="3605000" />
       <workItem from="1543115355197" duration="121000" />
       <workItem from="1543148996073" duration="9121000" />
-      <workItem from="1543207343173" duration="637000" />
+      <workItem from="1543207343173" duration="1247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99602000" />
+    <option name="totallyTimeSpent" value="100212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="984" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49381328" visible="true" weight="0.21731935" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49381328" visible="true" weight="0.21731935" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -758,7 +746,7 @@
       <window_info id="Web" order="7" sideWeight="0.5061867" side_tool="true" weight="0.20628792" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30258718" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30258718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -767,7 +755,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3295838" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002758" side_tool="true" weight="0.1912261" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.4997242" visible="true" weight="0.1912261" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4997242" weight="0.1912261" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
@@ -942,13 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="102" column="38" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/MyFilter/CorsFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -980,10 +961,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="102" column="38" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Api/GetCategory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+        <state relative-caret-position="176">
+          <caret line="23" column="66" lean-forward="true" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
