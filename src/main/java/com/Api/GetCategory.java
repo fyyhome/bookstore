@@ -18,7 +18,6 @@ public class GetCategory extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String sql = "select * from category";
         try {
-//            response.getWriter().println(ResJson.generateResJson(0, "test", "无"));
             Connection conn = MysqlUtil.getConnection();
             ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
             ArrayList<JSONObject> categoryArr = new ArrayList<>();
@@ -30,16 +29,16 @@ public class GetCategory extends HttpServlet {
                 category.put("name", c_name);
                 categoryArr.add(category);
             }
-            MysqlUtil.closeAll(conn, conn.prepareStatement(sql), rs);
+            // MysqlUtil.closeAll(conn, conn.prepareStatement(sql), rs);
             PrintWriter out = response.getWriter();
             out.println(ResJson.generateResJson(1, "请求成功", "suc"));
         } catch (Exception e) {
             try {
-                response.getWriter().println(ResJson.generateResJson(2, "数据库操作失败", "无"));
+                response.getWriter().println(ResJson.generateResJson(2, "数据库操作失败", e.getMessage()));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-            e.printStackTrace();
+            e.getMessage();
         }
     }
 }
