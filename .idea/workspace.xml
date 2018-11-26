@@ -46,7 +46,7 @@
           <entry key="gradle" value="5" />
           <entry key="java" value="190" />
           <entry key="jsp" value="1" />
-          <entry key="md" value="12" />
+          <entry key="md" value="13" />
           <entry key="properties" value="1" />
           <entry key="xml" value="16" />
         </counts>
@@ -56,7 +56,7 @@
           <entry key="Groovy" value="5" />
           <entry key="JAVA" value="190" />
           <entry key="JSP" value="1" />
-          <entry key="Markdown" value="12" />
+          <entry key="Markdown" value="13" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="16" />
@@ -67,7 +67,7 @@
           <entry key="gitignore" value="2" />
           <entry key="gradle" value="9" />
           <entry key="java" value="10265" />
-          <entry key="md" value="1773" />
+          <entry key="md" value="1782" />
           <entry key="xml" value="272" />
         </counts>
       </usages-collector>
@@ -75,7 +75,7 @@
         <counts>
           <entry key="Groovy" value="9" />
           <entry key="JAVA" value="10265" />
-          <entry key="Markdown" value="1773" />
+          <entry key="Markdown" value="1782" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="272" />
         </counts>
@@ -83,7 +83,20 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="692">
+                <caret line="156" column="7" selection-start-line="156" selection-start-column="7" selection-end-line="156" selection-end-column="7" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -530,6 +543,11 @@
               <item name="bookstore_be" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookstore_be" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
+            <path>
+              <item name="bookstore_be" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore_be" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -660,15 +678,16 @@
       <workItem from="1543115355197" duration="121000" />
       <workItem from="1543148996073" duration="9121000" />
       <workItem from="1543207343173" duration="4237000" />
-      <workItem from="1543227049829" duration="5020000" />
+      <workItem from="1543227049829" duration="5109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108222000" />
+    <option name="totallyTimeSpent" value="108311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="984" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49381328" visible="true" weight="0.21952565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -833,16 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="406">
-            <caret line="131" column="39" lean-forward="true" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Api/GetUserOrders.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-374">
@@ -909,6 +918,16 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="692">
+            <caret line="156" column="7" selection-start-line="156" selection-start-column="7" selection-end-line="156" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
