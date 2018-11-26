@@ -1,6 +1,6 @@
 <h1>javaweb bookstore_be api文档</h1>
 
-<h4>已登录的请求头： "Authorization": "token"</h4>
+<h4>已登录的请求头验证： "Authorization": "token"</h4>
 
 **post: /api/register**  
 req:  
