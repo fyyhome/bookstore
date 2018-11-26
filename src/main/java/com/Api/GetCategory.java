@@ -31,7 +31,7 @@ public class GetCategory extends HttpServlet {
             }
             MysqlUtil.closeAll(conn, conn.prepareStatement(sql), rs);
             PrintWriter out = response.getWriter();
-            out.println(ResJson.generateResJson(1, "请求成功", categoryArr));
+            out.println(ResJson.generateResJson(1, "请求成功", "suc"));
         } catch (Exception e) {
             try {
                 response.getWriter().println(ResJson.generateResJson(2, "数据库操作失败", "无"));
