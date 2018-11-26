@@ -18,6 +18,7 @@ public class GetCategory extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String sql = "select * from category";
         try {
+            response.getWriter().println(ResJson.generateResJson(0, "test", "无"));
             Connection conn = MysqlUtil.getConnection();
             ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
             ArrayList<JSONObject> categoryArr = new ArrayList<>();
