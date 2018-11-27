@@ -152,6 +152,33 @@ res:
 >>        }
 >    ]
 
-}
+}  
 
-/* **** test *** */
+
+**书籍分页 get: /api/getBookList?page=1&size=12**  
+res:  
+{  
+>  status: 1,  
+   message: "xxx",  
+   data: [  
+>>      {  
+>>         "book_id": 001,
+>>         "book_name": "xxx",
+>>         "book_author": "xxx",
+>>         "book_publishing": "xxx",
+>>         "book_smimg": "http://xxx.jpg",  
+>>         "book_price": 9.9  
+>>      }  
+>   ]
+  
+}  
+
+**购物车里的书籍增一或减一操作 post: api/updateCarBookCount**   
+req:  
+{  
+>  "type":  -1(减)/1(加),  
+  "book_id": 001  
+  
+}  
+res:  
+同上，依据status判断成功与否

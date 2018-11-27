@@ -59,7 +59,9 @@ public class GetUserOrders extends HttpServlet {
                             book.put("book_publishing", myrs.getString("book_publishing"));
                             book.put("book_smimg", myrs.getString("book_smimg"));
                         }
-                        total_price += myrs.getInt("book_price");
+                        int book_price = myrs.getInt("book_price");
+                        total_price += book_price;
+                        book.put("book_price", book_price);
                         book.put("book_count",rs.getInt("book_count"));
                         books.add(book);
                         order.put("order_id", id);

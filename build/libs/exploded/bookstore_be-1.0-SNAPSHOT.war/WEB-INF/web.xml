@@ -102,4 +102,22 @@
         <servlet-name>GetUserOrders</servlet-name>
         <url-pattern>/api/getUserOrders</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetBookList</servlet-name>
+        <servlet-class>com.Api.GetBookList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetBookList</servlet-name>
+        <url-pattern>/api/getBookList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateCarBookCount</servlet-name>
+        <servlet-class>com.Api.UpdateCarBookCount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateCarBookCount</servlet-name>
+        <url-pattern>/api/updateCarBookCount</url-pattern>
+    </servlet-mapping>
 </web-app>
