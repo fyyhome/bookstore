@@ -40,12 +40,10 @@ public class AddBookWithToken extends HttpServlet {
                             response.getWriter().println(ResJson.generateResJson(2, "添加失败", "未知意外"));
                         }
                     } else {
-                        String updateSql = "inser into shop_car(user_id,book_id,book_count) values(?,?,?)";
-                        String[] updateParam = new String[3];
-                        updateParam[0] = user_id;
-                        updateParam[1] = json.getString("book_id");
-                        updateParam[2] = json.getString("book_count");
-                        if(MysqlUtil.excutUpdate(conn, updateSql, updateParam) > 0) {
+                        String book_id = json.getString("book_id");
+                        String book_count = json.getString("book_count");
+                        String updateSql = "inser into shop_car(user_id,book_id,book_count) values(" + user_id + "," + book_id + "," + book_count + ")";
+                        if(MysqlUtil.excutUpdate(conn, updateSql, null) > 0) {
                             response.getWriter().println(ResJson.generateResJson(1, "添加成功", "无"));
                         } else {
                             response.getWriter().println(ResJson.generateResJson(2, "添加失败", "未知意外"));
