@@ -52,6 +52,7 @@ public class AddBookWithToken extends HttpServlet {
                         }
                     }
                 } catch (Exception e) {
+                    response.getWriter().println(ResJson.generateResJson(2,"数据库操作错误", e.toString()));
                     e.printStackTrace();
                 }
             } else {

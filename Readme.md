@@ -181,4 +181,13 @@ req:
   
 }  
 res:  
-同上，依据status判断成功与否
+同上，依据status判断成功与否  
+
+**删除购物车的书籍 post: /api/deleteCarBook**  
+req:  
+{  
+>   "book_id": 001  
+
+} 
+res:
+同上
