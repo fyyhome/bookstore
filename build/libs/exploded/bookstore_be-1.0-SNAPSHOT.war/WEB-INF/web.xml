@@ -120,4 +120,13 @@
         <servlet-name>UpdateCarBookCount</servlet-name>
         <url-pattern>/api/updateCarBookCount</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCarBook</servlet-name>
+        <servlet-class>com.Api.DeleteCarBook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCarBook</servlet-name>
+        <url-pattern>/api/deleteCarBook</url-pattern>
+    </servlet-mapping>
 </web-app>
