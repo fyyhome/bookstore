@@ -42,7 +42,7 @@ public class AddBookWithToken extends HttpServlet {
                     } else {
                         String book_id = json.getString("book_id");
                         String book_count = json.getString("book_count");
-                        String updateSql = "inser into shop_car(user_id,book_id,book_count) values(" + user_id + "," + book_id + "," + book_count + ")";
+                        String updateSql = "insert into shop_car(user_id,book_id,book_count) values(" + user_id + "," + book_id + "," + book_count + ")";
                         if(MysqlUtil.excutUpdate(conn, updateSql, null) > 0) {
                             response.getWriter().println(ResJson.generateResJson(1, "添加成功", "无"));
                         } else {
