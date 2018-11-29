@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="Gradle : com.bookstore : bookstore_be-1.0-SNAPSHOT.war (exploded) archive">
-    <output-path>$PROJECT_DIR$/out/artifacts/Gradle___com_bookstore___bookstore_be_1_0_SNAPSHOT_war__exploded__archive</output-path>
-    <root id="archive" name="Gradle _ com.bookstore _ bookstore_be-1.0-SNAPSHOT.war (exploded) archive.war">
-      <element id="artifact" artifact-name="Gradle : com.bookstore : bookstore_be-1.0-SNAPSHOT.war (exploded)" />
-    </root>
-  </artifact>
-</component>

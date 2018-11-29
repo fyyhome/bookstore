@@ -56,6 +56,9 @@ public class GetSpecialKind extends HttpServlet {
                // out.println(book_id+"   "+book_name+"     "+book_author+"     "+book_price+"      "+book_publishing+"     "+ book_smimg+"     "+book_mdimg+"    "+book_describe);
                 bookArr.add(book);
             }
+            if(bookArr.size()==0)
+                out.println(ResJson.generateResJson(-1,"书籍信息请求失败","书籍类别号非法"));
+            else
             out.println(ResJson.generateResJson(1, "书籍信息请求成功", bookArr));
             MysqlUtil.closeAll(conn,psta,rs);
         }

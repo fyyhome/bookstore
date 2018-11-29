@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="bookstore_1">
+    <output-path>$PROJECT_DIR$/out/artifacts/bookstore_1</output-path>
+    <root id="archive" name="bookstore_1.war">
+      <element id="artifact" artifact-name="Gradle : com.bookstore : bookstore_be-1.0-SNAPSHOT.war (exploded)" />
+    </root>
+  </artifact>
+</component>
