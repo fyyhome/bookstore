@@ -24,14 +24,29 @@ public class UpdateGoodsNum extends HttpServlet {
         HttpSession session=request.getSession();
         ArrayList<JSONObject> bookArr=(ArrayList<JSONObject>)session.getAttribute("bookArr");
         PrintWriter out=response.getWriter();
+        if(bookArr==null)
+        {
+            out.println(ResJson.generateResJson(-1,"购物车为空", "购物车为空修改操作非法"));
+        }
         String sbook_id=request.getParameter("book_id");
+        if(sbook_id==null)
+        {
+            out.println("操作失败,请输入正确的book_id");
+            return ;
+        }
        int book_id=Integer.parseInt(sbook_id);
         //String sbook_id="100000158";
         //int book_id=100000158;
         String newNum=request.getParameter("book_num");
+        if(newNum==null)
+        {
+            out.println("操作失败,请输入正确的book_num");
+            return;
+        }
         int num=Integer.parseInt(newNum);
         //String newNum="5";
         //int num=5;
+        int flag=0;
         if(num<0)
         {
             out.println(ResJson.generateResJson(-1, "Error", "商品数必须为正整数"));
@@ -44,11 +59,19 @@ public class UpdateGoodsNum extends HttpServlet {
                 int id=data.getInt("book_id");
                 if(id==book_id)
                 {
+                    flag=1;
+                    if(num==0)
+                    {
+                        bookArr.remove(i);
+                    }
+                    else
+                    {
                     JSONObject book=new JSONObject();
                     book.put("book_id",id);
                     book.put("book_num",num);
                     bookArr.set(i,book);
                     break;
+                    }
                 }
             }
             session.setAttribute("bookArr",bookArr);

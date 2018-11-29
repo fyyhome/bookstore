@@ -26,7 +26,7 @@ public class ViewShopCar extends HttpServlet {
         ArrayList<JSONObject> bookInformation=new ArrayList<JSONObject>();
         if(bookArr==null)
         {
-            out.println("Sorry,当前购物车为空~");
+            out.println(ResJson.generateResJson(-1,"Sorry,当前购物车为空~","Sorry,当前购物车为空~"));
         }
         else{
             Connection conn = MysqlUtil.getConnection();

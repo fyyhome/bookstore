@@ -25,6 +25,10 @@ public class AddToShopCar extends HttpServlet {
                 bookArr=new ArrayList<JSONObject>();
             }
             String sbook_id=request.getParameter("book_id");
+            if(sbook_id==null)
+            {
+                response.getWriter().println("添加购物车失败，请输入正确的book_id");
+            }
            /* String sbook_id="100000158";
             int book_id=100000158;
             int book_id1=100000611;

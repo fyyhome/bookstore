@@ -22,10 +22,9 @@ public class GetSelfOrders extends HttpServlet {
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       // String suser_id=request.getParameter("user_id");
-        //int user_id=Integer.parseInt(suser_id);
+       String suser_id=request.getParameter("user_id");
+        int user_id=Integer.parseInt(suser_id);
         PrintWriter out=response.getWriter();
-        int user_id=3;
         ArrayList<Integer> orderIdArr=new ArrayList<Integer>();
         ArrayList<ArrayList<JSONObject>> selfOrders=new ArrayList<ArrayList<JSONObject>>();
         Connection conn=MysqlUtil.getConnection();

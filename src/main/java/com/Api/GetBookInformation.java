@@ -23,12 +23,16 @@ public class GetBookInformation extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
-        response.setContentType("application/json");
         PrintWriter out=response.getWriter();
         Connection conn=MysqlUtil.getConnection();
-        String sbook_id=request.getParameter("book_id");
+       String sbook_id=request.getParameter("book_id");
+       if(sbook_id==null)
+       {
+           out.println("读取书籍信息失败,请正确输入书籍号");
+           return ;
+       }
         int book_id=Integer.parseInt(sbook_id);
-       // int book_id=100000158;
+       //int book_id=100000158;
         try{
             String sql="select * from books where book_id=?";
             PreparedStatement psta=conn.prepareStatement(sql);

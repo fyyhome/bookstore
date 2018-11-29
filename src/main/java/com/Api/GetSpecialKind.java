@@ -21,6 +21,11 @@ public class GetSpecialKind extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         Connection conn = MysqlUtil.getConnection();
         String sc_id=request.getParameter("c_id");//传入书籍编号;
+        if(sc_id==null)
+        {
+            response.getWriter().println("获取信息失败,请正确传入书籍号");
+            return ;
+        }
         int c_id=Integer.parseInt(sc_id);
         try{
             PrintWriter out=response.getWriter();

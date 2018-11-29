@@ -26,6 +26,11 @@ public class GoodsNumSub extends HttpServlet {
         ArrayList<JSONObject> bookArr=(ArrayList<JSONObject>)session.getAttribute("bookArr");
         PrintWriter out=response.getWriter();
         String sbook_id=request.getParameter("book_id");
+        if(sbook_id==null)
+        {
+            out.println("操作失败,请输入正确的book_id");
+            return ;
+        }
         int book_id=Integer.parseInt(sbook_id);
         //String sbook_id="100000158";
         //int book_id=100000158;
@@ -38,12 +43,24 @@ public class GoodsNumSub extends HttpServlet {
                 JSONObject book=new JSONObject();
                 int book_num=data.getInt("book_num");
                 book_num--;
+                if(book_num==0)
+                {
+                    bookArr.remove(i);
+                }
+                else
+                {
                 book.put("book_id",book_id);
                 book.put("book_num",book_num);
                 bookArr.set(i,book);
                 break;
+                }
             }
         }
+        if(bookArr.size()==0)
+        {
+            session.removeAttribute("bookArr");
+        }
+        else
         session.setAttribute("bookArr",bookArr);
     }
 }
