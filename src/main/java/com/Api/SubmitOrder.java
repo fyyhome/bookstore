@@ -48,7 +48,7 @@ public class SubmitOrder extends HttpServlet {
                             response.getWriter().println(ResJson.generateResJson(2, "提交出了点意外", "无"));
                         }
                     } catch (Exception e) {
-                        response.getWriter().println(ResJson.generateResJson(2, "提交出了点意外", "无"));
+                        response.getWriter().println(ResJson.generateResJson(2, "提交出了点意外", e.toString()));
                         e.printStackTrace();
                     }
                 }
