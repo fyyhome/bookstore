@@ -59,7 +59,7 @@ public class MysqlUtil {
                 }
             }
             rs = pstmt.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             closeAll(conn, pstmt, null);
