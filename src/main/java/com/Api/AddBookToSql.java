@@ -31,10 +31,12 @@ public class AddBookToSql extends HttpServlet {
                         user_type = rs.getInt( "user_type");
                     }
                     if (user_type == 1) {
-                        String[] param = new String[7];
-                        int c_id = parse(ResJson.getRequestBody(request.getInputStream()), param);
+                        String[] param = new String[6];
+                        JSONObject parseJson = parse(ResJson.getRequestBody(request.getInputStream()), param);
+                        int c_id = parseJson.getInt("c_id");
+                        float price = parseJson.getFloat("book_price");
                         String sql = "insert into books(book_name,book_author,book_price,book_publishing,c_id,book_smimg,book_mdimg,book_describe)" +
-                                " values(?,?,?,?," + c_id + ",?,?,?)";
+                                " values(?,?," + price + ",?," + c_id + ",?,?,?)";
                         if (MysqlUtil.excutUpdate(conn, sql, param) > 0) {
                             response.getWriter().println(ResJson.generateResJson(1, "添加成功", "无"));
                         } else {
@@ -56,15 +58,14 @@ public class AddBookToSql extends HttpServlet {
 
     }
 
-    private int parse(String data, String[] params) {
+    private JSONObject parse(String data, String[] params) {
         JSONObject json = new JSONObject(data);
         params[0] = json.getString("book_name");
         params[1] = json.getString("book_author");
-        params[2] = json.getString("book_price");
-        params[3] = json.getString("book_publishing");
-        params[4] = json.getString("book_smimg");
-        params[5] = json.getString("book_mdimg");
-        params[6] = json.getString("book_describe");
-        return json.getInt("c_id");
+        params[2] = json.getString("book_publishing");
+        params[3] = json.getString("book_smimg");
+        params[4] = json.getString("book_mdimg");
+        params[5] = json.getString("book_describe");
+        return json;
     }
 }

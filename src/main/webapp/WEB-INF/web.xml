@@ -49,14 +49,14 @@
         <url-pattern>/api/searchUser</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>UpdateOrder</servlet-name>-->
-        <!--<servlet-class>com.Api.UpdateOrderStatus</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>UpdateOrder</servlet-name>-->
-        <!--<url-pattern>/api/updateOrder</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>UpdateOrder</servlet-name>
+        <servlet-class>com.Api.UpdateOrderStatus</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateOrder</servlet-name>
+        <url-pattern>/api/updateOrder</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>AddBookWithToken</servlet-name>
@@ -76,14 +76,14 @@
         <url-pattern>/api/getShopCarWithToken</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>SubmitOrder</servlet-name>-->
-        <!--<servlet-class>com.Api.SubmitOrder</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>SubmitOrder</servlet-name>-->
-        <!--<url-pattern>/api/submitOrder</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>SubmitOrder</servlet-name>
+        <servlet-class>com.Api.SubmitOrder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubmitOrder</servlet-name>
+        <url-pattern>/api/submitOrder</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>AddBookToSql</servlet-name>
@@ -94,14 +94,14 @@
         <url-pattern>/api/addBookToSql</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>GetUserOrders</servlet-name>-->
-        <!--<servlet-class>com.Api.GetUserOrders</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>GetUserOrders</servlet-name>-->
-        <!--<url-pattern>/api/getUserOrders</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>GetUserOrders</servlet-name>
+        <servlet-class>com.Api.GetUserOrders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUserOrders</servlet-name>
+        <url-pattern>/api/getUserOrders</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>GetBookList</servlet-name>
