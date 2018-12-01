@@ -26,9 +26,11 @@ public class Login extends HttpServlet {
             ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
             String password = "";
             String user_id = "";
+            int user_type = 0;
             while (rs.next()) {
                 password = rs.getString("user_password");
                 user_id = rs.getString("user_id");
+                user_type = rs.getInt("user_type");
             }
             if (password.equals("")) {
                 response.getWriter().println(ResJson.generateResJson(2, "登录失败", "用户名不存在"));
@@ -36,6 +38,7 @@ public class Login extends HttpServlet {
                 String token = JJwtUtil.createJWT(user_id, params[0]);
                 JSONObject data = new JSONObject();
                 data.put("token", token);
+                data.put("user_type", user_type);
                 response.getWriter().println(ResJson.generateResJson(1, "请求成功", data));
             } else {
                 response.getWriter().println(ResJson.generateResJson(3, "登录失败", "密码错误"));

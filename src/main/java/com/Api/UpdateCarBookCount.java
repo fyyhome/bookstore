@@ -21,7 +21,7 @@ import java.sql.SQLException;
 public class UpdateCarBookCount extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String token = request.getHeader("Authorization");
-        if (token.equals("") || token == null) {
+        if (token == null || token.equals("")) {
             response.getWriter().println(ResJson.generateResJson(4, "未登录", "无"));
         } else {
             if (VerifyToken.myVerify(token)) {
