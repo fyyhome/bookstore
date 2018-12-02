@@ -41,7 +41,7 @@ public class AddBookToSql extends HttpServlet {
                         if (MysqlUtil.excutUpdate(conn, sql, param) > 0) {
                             response.getWriter().println(ResJson.generateResJson(1, "添加成功", "无"));
                         } else {
-                            response.getWriter().println(ResJson.generateResJson(2, "添加出了点意外", "无"));
+                            response.getWriter().println(ResJson.generateResJson(2, "添加出了点意外", sql));
                         }
                     } else {
                         response.getWriter().println(ResJson.generateResJson(5, "没有管理员权限", "无"));

@@ -39,8 +39,8 @@ public class SubmitOrder extends HttpServlet {
                     try {
                         Connection conn = MysqlUtil.getConnection();
                         PreparedStatement pstmt = conn.prepareStatement(sql);
-                        for (int j = 0; j < params.length; i++) {
-                            pstmt.setInt(i+1, params[i]);
+                        for (int j = 0; j < params.length; j++) {
+                            pstmt.setInt(j+1, params[j]);
                         }
                         if (pstmt.executeUpdate() > 0) {
                             response.getWriter().println(ResJson.generateResJson(1, "提交成功", "无"));
