@@ -72,7 +72,7 @@ public class AddBookToSql extends HttpServlet {
 
     private int getBookId() {
         int book_id = 100;
-        String sql = "select MAX(book_id) from books";
+        String sql = "select max(book_id) as book_id from books";
         try {
             Connection conn = MysqlUtil.getConnection();
             ResultSet rs = MysqlUtil.excutQuery(conn, sql, null);
