@@ -6,7 +6,7 @@ public class MysqlUtil {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://120.79.211.126:3306/studyDB?useSSL=false&useUnicode=true&characterEncoding=utf-8";
     static final String USER = "fyy";
-    static final String PASS = "123Fuyingyou";
+    static final String PASS = "";
 
     // 获取连接
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
